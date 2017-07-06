@@ -5,7 +5,7 @@ class Contact
 @@id = 1
 
   # This method should initialize the contact's attributes
-  def initialize
+
 
  def initialize(first_name, last_name, email)
      @first_name = first_name
@@ -38,7 +38,7 @@ class Contact
   # and return the contact who has that id
   def self.find(id)
 @@contacts.each do |id|
-  if Contact.id == id
+  if contact.id == id
     return contact
   end
 
@@ -47,23 +47,29 @@ class Contact
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
   def update(attribute, value)
-    if attribute == first_name
-      Contact.first_name = value
+    if attribute == "first_name"
+      contact.first_name = value
 
-    elsif attribute == last_name
-      Contact.last_name = value
+    elsif attribute == "last_name"
+      contact.last_name = value
 
-    elsif attribute == email
-      Contact.email = value
+    elsif attribute == "email"
+      contact.email = value
     end
   end
 
-  # This method should work similarly to the find method above
+  ####################################################### This method should work similarly to the find method above
   # but it should allow you to search for a contact using attributes other than id
   # by specifying both the name of the attribute and the value
   # eg. searching for 'first_name', 'Betty' should return the first contact named Betty
   def self.find_by(attribute, value)
-    if attribute
+    @@contacts.each do |attribute|
+    if attribute == "first_name" && contact.first_name == value
+      return contact
+    elsif attribute == "last_name" && contact.last_name == value
+      return contact
+    elsif attribute == "email" && contact.email == value
+      return contact
 
   end
 
@@ -77,10 +83,10 @@ class Contact
     "#{first_name} #{last_name}"
   end
 
-  # This method should delete the contact
+  ################################################# This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
-  def delete
-    @@contacts.delete
+  def delete(id)
+    @@contacts.delete(id)
 
   end
 
