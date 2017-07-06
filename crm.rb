@@ -30,14 +30,14 @@ class CRM
   end
 
   def add_new_contact
-    new_contact = Contact.new(first_name, last_name, email, note)
-    @@contacts << new_contact
-    return new_contact
+
 
 
   end
 
-  def modify_existing_contact
+  def modify_existing_contact(id)
+    @@contact.each do |id|
+      if id ==
 
   end
 
@@ -46,10 +46,11 @@ class CRM
   end
 
   def display_all_contacts
+    @@contacts
 
   end
 
-  def search_by_attribute
+  def search_by_attribute(attribute)
 
   end
 
